@@ -103,6 +103,9 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
+      racc (~> 1.4)
+    pg (1.4.5)
     public_suffix (5.0.0)
     puma (3.12.6)
     racc (1.6.0)
@@ -143,6 +146,8 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.6.1)
     rexml (3.2.5)
+    robocop (0.1.1)
+      rack
     ruby_dep (1.5.0)
     rubyzip (2.3.2)
     sass (3.7.4)
@@ -201,6 +206,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
@@ -209,8 +215,10 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4)
+  pg
   puma (~> 3.11)
   rails (~> 6.0.0)
+  robocop
   sass-rails (~> 5)
   selenium-webdriver
   spring
