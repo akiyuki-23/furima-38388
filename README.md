@@ -2,11 +2,16 @@
 
 ## users テーブル
 
-| Column             | Type   | Options                   |
-|--------------------|--------|---------------------------|
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
+| Column             | Type    | Options                   |
+|--------------------|---------|---------------------------|
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| last-name          | string  | null: false               |
+| first-name         | string  | null: false               |
+| last-name-kana     | string  | null: false               |
+| first-name-kana    | string  | null: false               |
+| birth-date_id      | integer | null: false               |
 
 ### Association
 - has_many :items
@@ -16,15 +21,14 @@
 
 | Column                     | Type       | Options                        |
 |----------------------------|------------|--------------------------------|
-| img                        | blob       | null: false                    |
 | item-name                  | string     | null: false                    |
 | item-info                  | text       | null: false                    |
 | item-price                 | integer    | null: false                    |
-| category                   | string     | null: false                    |
-| sales-status               | string     | null: false                    |
-| shipping-fee-status        | string     | null: false                    |
-| item-prefecture            | string     | null: false                    |
-| item-scheduled-delivery_id | string     | null: false                    |
+| category_id                | integer    | null: false                    |
+| sales-status_id            | integer    | null: false                    |
+| shipping-fee-status_id     | integer    | null: false                    |
+| prefecture_id              | integer    | null: false                    |
+| item-scheduled-delivery_id | integer    | null: false                    |
 | user                       | references | null: false, foreign_key: true |
 
 ### Association
@@ -45,15 +49,15 @@
 
 ## shipping addresses テーブル
 
-|Column|Type|Options|
-|------|----|-------|
-| postal-code  | string     | null: false                    |
-| prefecture   | string     | null: false                    |
-| city         | string     | null: false                    |
-| addresses    | string     | null: false                    |
-| building     | string     | null: true                     |
-| phone-number | integer    | null: false                    |
-| purchase     | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+|---------------|------------|--------------------------------|
+| postal-code   | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| addresses     | string     | null: false                    |
+| building      | string     |                                |
+| phone-number  | string     | null: false                    |
+| purchase      | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :purchase
