@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_one_attached :image
   extend ActiveHash::Association::ActiveRecordExtensions
   belongs_to :category
   belongs_to :sales_status
@@ -8,6 +9,7 @@ class Item < ApplicationRecord
   belongs_to :item_scheduled_delivery
 
   with_options presence:true do
+    validates :image
     validates :item_name
     validates :item_info
     validates :item_price, format: { with: /\A[0-9]+\z/ }, numericality: { in: 300..9,999,999, 'is invalid' }
