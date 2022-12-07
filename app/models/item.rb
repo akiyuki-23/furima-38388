@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  extend ActiveHash::Association::ActiveRecordExtensions
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :sales_status
   belongs_to :shipping_fee_status
@@ -12,7 +12,7 @@ class Item < ApplicationRecord
     validates :image
     validates :item_name
     validates :item_info
-    validates :item_price, format: { with: /\A[0-9]+\z/ }, numericality: { in: 300..9,999,999, 'is invalid' }
+    validates :item_price, format: { with: /\A[0-9]+\z/ }, numericality: { only_integer: true, greater_than: 300,less_than: 9999999 }
   end
 
   with_options numericality: { other_than: 1 , message: "can't be blank"} do
