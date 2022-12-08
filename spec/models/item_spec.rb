@@ -64,12 +64,12 @@ RSpec.describe Item, type: :model do
       it 'item_priceが300未満では登録できない' do
         @item.item_price = '200'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Item price must be greater than 300')
+        expect(@item.errors.full_messages).to include('Item price must be greater than or equal to 300')
       end
       it 'item_priceが10000000以上では登録できない' do
         @item.item_price = '100000000000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Item price must be less than 9999999')
+        expect(@item.errors.full_messages).to include('Item price must be less than or equal to 9999999')
       end
       it 'item_priceが半角英字では登録できない' do
         @item.item_price = 'item'
