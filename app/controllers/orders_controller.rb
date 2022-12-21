@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
 
   def move_to_index
     return if @item.user_id != current_user.id && @item.order.blank?
+
     redirect_to root_path
   end
 end
