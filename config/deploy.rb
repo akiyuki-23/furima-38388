@@ -6,6 +6,8 @@ set :repo_url, "git@github.com:akiyuki-23/furima-38388.git"
 
 set :linker_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pid', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
+set :branch, "main"
+
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.5'
 
