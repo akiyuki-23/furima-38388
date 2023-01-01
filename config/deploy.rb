@@ -2,9 +2,9 @@ lock "~> 3.17.1"
 
 set :application, 'furima-38388'
 
-set :repo_url, "git@github.com:akiyuki-23/furima-38388.git"
+set :repo_url, 'git@github.com:akiyuki-23/furima-38388.git'
 
-set :linker_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pid', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :branch, "main"
 
