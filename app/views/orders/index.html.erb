@@ -34,9 +34,13 @@
     <%= form_with model: @order_address, url: item_orders_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
       <%= render 'shared/error_messages', model: @order_address %>
     <%# カード情報の入力 %>
+    <div class='credit-card-form'>
+      <h1 class='info-input-haedline'>
+        クレジットカード情報入力
+      </h1>
       <label for="number">カード情報</label>
       <div id='number' class="payjs-outer form-wrap">
-        <%# ここにフォームが生成されます %>
+          <%# ここにフォームが生成されます %>
       </div>
       <label for="exp-date">有効期限</label>
       <div id='exp-date' class="payjs-outer form-wrap">
@@ -46,6 +50,7 @@
       <div id='cvc' class="payjs-outer form-wrap">
         <%# ここにフォームが生成されます %>
       </div>
+    </div>
     <%# /カード情報の入力 %>
     
     <%# 配送先の入力 %>
