@@ -1,4 +1,4 @@
-lock "~> 3.17.1"
+lock "~> 3.17.3"
 
 set :application, 'furima-38388'
 
